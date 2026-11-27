@@ -102,7 +102,8 @@ def main():
         jsave(fp, D)
         idx = D.get("idx", {})
         sh, cy = idx.get("sh000001", [None, None]), idx.get("sz399006", [None, None])
-        index_days.append([day, mk["nh"], mk["nh250"], 1 if D.get("gen") else 0])
+        t1 = {m: (names[top[m][0][0]] if top[m] else "") for m in ("h", "w")}
+        index_days.append([day, mk["nh"], mk["nh250"], 1 if D.get("gen") else 0, t1["h"], t1["w"], mk["lu"]])
         month[day[:7]].append(dict(day=day, mk=mk, sh=sh, cy=cy, top=top, names=names, cs=cs))
         trend.append((day, {names[c[0]]: (c[2], c[3], c[4]) for c in cs}))
     # 月度汇总
