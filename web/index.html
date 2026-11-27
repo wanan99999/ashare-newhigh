@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>创新高热点</title>
+<meta name="description" content="每天 A 股创历史新高 / 250 日新高的股票，按热点概念归类：新高数量前 5、涨幅前 5、本月概况">
+<meta name="theme-color" content="#182c4f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@700;900&display=swap">
+<link rel="stylesheet" href="assets/app.css?v=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23182c4f'/%3E%3Cpath d='M8 22l6-7 4 4 7-9M19 10h6v6' stroke='%23ff6b5e' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<header class="mast"><div class="mast-in">
+  <a class="brand" href="#/"><span class="mark" aria-hidden="true"></span>创新高热点</a>
+  <nav class="mast-nav"><a href="#/" onclick="setTimeout(function(){var m=document.getElementById('month');m&&m.scrollIntoView({behavior:'smooth'})},300)">本月概况</a><a class="cta" href="upload.html">上传概念</a></nav>
+</div></header>
+<main class="wrap" id="app"><div class="loading">加载中…</div></main>
+<footer class="foot"><div class="foot-in">
+  <span>历史新高 = 当日最高价高于上市以来最高价（前复权，平前高不算）；250日新高 = 高于前 250 个交易日最高价。上市不满 60 个交易日、停牌的不算。</span>
+  <span>加权涨跌 = 概念成分股按流通市值加权的当日涨跌，是估算值，与 Wind 概念指数会有差别。概念按你上传的概念表归类，已剔除泛用标签（见上传页的剔除名单）。</span>
+  <span>每个交易日收盘后自动更新（约 15:50，GitHub 偶有延迟）· 红涨绿跌 · 数据来自新浪行情</span>
+</div></footer>
+<button class="totop" id="totop" type="button" aria-label="回到顶部">顶部</button>
+<script src="assets/app.js?v=1"></script>
+</body>
+</html>
