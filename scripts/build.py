@@ -106,6 +106,13 @@ def main():
         index_days.append([day, mk["nh"], mk["nh250"], 1 if D.get("gen") else 0, t1["h"], t1["w"], mk["lu"]])
         month[day[:7]].append(dict(day=day, mk=mk, sh=sh, cy=cy, top=top, names=names, cs=cs))
         trend.append((day, {names[c[0]]: (c[2], c[3], c[4]) for c in cs}))
+        if day == days[-1]:   # 最新一天的小摘要，给市场看板等外部页面用（不用下整天数据）
+            byid = {c[0]: c for c in cs}
+            latest = dict(date=day, gen=bool(D.get("gen")), nh=mk["nh"], nh250=mk["nh250"], lu=mk["lu"], up=mk["up"], down=mk["down"],
+                          sh=sh[1], cy=cy[1],
+                          top={m: [[names[t[0]], byid[t[0]][2 if m == "h" else 3], byid[t[0]][4], t[1], t[2]] for t in top[m]] for m in ("h", "w")},
+                          gain=[[names[i], byid[i][4]] for i in gain])
+            jsave(os.path.join(DATA, "latest.json"), latest)
     # 月度汇总
     months = sorted(month)
     for m in months:
